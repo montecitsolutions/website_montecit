@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Primary -->
+  <title>Montec | Soluciones IT para tu Empresa en Perú</title>
+  <meta name="description" content="Montec: empresa peruana de tecnología especializada en desarrollo de sistemas, desarrollo web, redes, administración de servidores, mantenimiento y venta de equipos. Contáctanos hoy." />
+  <meta name="keywords" content="desarrollo de sistemas peru, desarrollo web peru, redes empresariales, mantenimiento computadoras, laptops peru, servidores linux, IT peru, tecnologia empresas peru" />
+  <meta name="author" content="Montec" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://montec.pe/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://montec.pe/" />
+  <meta property="og:title" content="Montec | Soluciones IT para tu Empresa en Perú" />
+  <meta property="og:description" content="Desarrollo de sistemas, redes, mantenimiento y equipos. Tu socio tecnológico en Perú." />
+  <meta property="og:locale" content="es_PE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Montec | Soluciones IT en Perú" />
+  <meta name="twitter:description" content="Desarrollo de sistemas, redes, mantenimiento y equipos tecnológicos." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Tailwind Config (must be before CDN) -->
+  <script>
+    window.tailwind = {
+      config: {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Space Grotesk', 'sans-serif'],
+            },
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Montec",
+    "description": "Empresa peruana de tecnología IT: desarrollo de sistemas, redes, servidores, mantenimiento y venta de equipos.",
+    "url": "https://montec.pe",
+    "email": "contacto@montec.pe",
+    "address": { "@type": "PostalAddress", "addressCountry": "PE" },
+    "employee": [
+      { "@type": "Person", "name": "Omar Silva", "jobTitle": "Desarrollador de Sistemas y Administrador de Servidores" },
+      { "@type": "Person", "name": "Paul Montero", "jobTitle": "Especialista en Redes y Mantenimiento" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios IT",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de Sistemas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo Web" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redes y Conectividad" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Administración de Servidores" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venta de Equipos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento y Soporte" } }
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-slate-950 text-white font-sans overflow-x-hidden">
+
+  <!-- ========================= NAVBAR ========================= -->
+  <nav x-data="{ open: false, scrolled: false }"
+       @scroll.window="scrolled = window.scrollY > 50"
+       class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+       :class="scrolled ? 'navbar-glass py-0' : 'bg-transparent py-2'">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-[72px]">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center font-bold text-lg text-white font-heading flex-shrink-0 shadow-lg shadow-sky-500/30">M</div>
+          <span class="text-xl font-bold font-heading tracking-tight">Mon<span class="text-sky-400">tec</span></span>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#servicios"         class="nav-link text-slate-300 hover:text-white transition-colors text-sm font-medium">Servicios</a>
+          <a href="#equipo"            class="nav-link text-slate-300 hover:text-white transition-colors text-sm font-medium">Equipo</a>
+          <a href="#por-que-nosotros"  class="nav-link text-slate-300 hover:text-white transition-colors text-sm font-medium">¿Por qué Montec?</a>
+          <a href="#contacto"          class="nav-link text-slate-300 hover:text-white transition-colors text-sm font-medium">Contacto</a>
+          <a href="#contacto" class="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-sky-500/20">
+            Cotizar ahora
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button @click="open = !open" aria-label="Menú" class="md:hidden p-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">
+          <i class="fas text-lg" :class="open ? 'fa-times' : 'fa-bars'"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-2"
+         class="md:hidden navbar-glass border-t border-sky-900/20">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+        <a href="#servicios"        @click="open=false" class="block text-slate-300 hover:text-sky-400 transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-800/40">Servicios</a>
+        <a href="#equipo"           @click="open=false" class="block text-slate-300 hover:text-sky-400 transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-800/40">Equipo</a>
+        <a href="#por-que-nosotros" @click="open=false" class="block text-slate-300 hover:text-sky-400 transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-800/40">¿Por qué Montec?</a>
+        <a href="#contacto"         @click="open=false" class="block text-slate-300 hover:text-sky-400 transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-800/40">Contacto</a>
+        <a href="#contacto"         @click="open=false" class="btn-primary block px-4 py-3 rounded-xl text-sm font-semibold text-center mt-3">Cotizar ahora</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================= HERO ========================= -->
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <canvas id="particles-canvas"></canvas>
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/20 to-slate-950 pointer-events-none"></div>
+
+    <!-- Glow orbs -->
+    <div class="absolute top-1/4 -left-20 w-[32rem] h-[32rem] bg-sky-500/8 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/3 -right-20 w-[28rem] h-[28rem] bg-indigo-500/8 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-24 pb-16">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-sky-400/10 border border-sky-400/25 rounded-full px-4 py-1.5 mb-8" data-aos="fade-down">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        <span class="text-sky-400 text-sm font-medium">Empresa de Tecnología IT en Perú</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6" data-aos="fade-up" data-aos-delay="100">
+        Soluciones <span class="gradient-text">tecnológicas</span><br />
+        que impulsan tu negocio
+      </h1>
+
+      <!-- Typing -->
+      <p class="text-lg sm:text-xl text-slate-400 mb-10 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="180">
+        Especialistas en&nbsp;<span id="typing-text" class="text-sky-400 font-semibold"></span><span class="typing-cursor"></span>
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="260">
+        <a href="#servicios" class="btn-primary px-8 py-3.5 rounded-xl font-semibold text-base w-full sm:w-auto shadow-xl shadow-sky-500/25">
+          <i class="fas fa-rocket mr-2"></i> Ver nuestros servicios
+        </a>
+        <a href="#contacto" class="btn-secondary px-8 py-3.5 rounded-xl font-semibold text-base w-full sm:w-auto">
+          <i class="fas fa-comments mr-2"></i> Contáctanos
+        </a>
+      </div>
+
+      <!-- Tech Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mt-12" data-aos="fade-up" data-aos-delay="340">
+        <span class="tech-badge"><i class="fab fa-windows mr-1.5"></i>Windows</span>
+        <span class="tech-badge"><i class="fab fa-apple mr-1.5"></i>macOS</span>
+        <span class="tech-badge"><i class="fab fa-linux mr-1.5"></i>Linux</span>
+        <span class="tech-badge"><i class="fas fa-network-wired mr-1.5"></i>Redes</span>
+        <span class="tech-badge"><i class="fas fa-server mr-1.5"></i>Servidores</span>
+        <span class="tech-badge"><i class="fas fa-code mr-1.5"></i>Desarrollo</span>
+        <span class="tech-badge"><i class="fas fa-laptop mr-1.5"></i>Hardware</span>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-600 animate-bounce">
+      <span class="text-xs tracking-widest uppercase">scroll</span>
+      <i class="fas fa-chevron-down text-xs"></i>
+    </div>
+  </section>
+
+  <!-- ========================= STATS ========================= -->
+  <section class="py-14 bg-slate-900/50 border-y border-sky-900/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+        <div data-aos="fade-up">
+          <div class="stat-number" data-count="50">0+</div>
+          <p class="text-slate-500 text-sm mt-1.5">Proyectos completados</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="80">
+          <div class="stat-number" data-count="30">0+</div>
+          <p class="text-slate-500 text-sm mt-1.5">Clientes satisfechos</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="160">
+          <div class="stat-number" data-count="5">0+</div>
+          <p class="text-slate-500 text-sm mt-1.5">Años de experiencia</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="240">
+          <div class="stat-number" data-count="6" data-suffix=" áreas">0</div>
+          <p class="text-slate-500 text-sm mt-1.5">Especialidades IT</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= SERVICES ========================= -->
+  <section id="servicios" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-label">Lo que hacemos</span>
+        <h2 class="section-title mt-3">Nuestros <span class="gradient-text">Servicios</span></h2>
+        <p class="section-subtitle">Soluciones tecnológicas completas adaptadas a las necesidades de tu empresa</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Sistemas -->
+        <article class="service-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon bg-sky-500/10 group-hover:bg-sky-500/18">
+            <i class="fas fa-code text-sky-400 text-xl"></i>
+          </div>
+          <h3 class="text-base font-semibold font-heading mt-4 mb-2 text-white">Desarrollo de Sistemas</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Software a medida para automatizar y optimizar los procesos de tu empresa: sistemas de gestión, facturación, inventario y más.</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="service-item"><i class="fas fa-check text-sky-400 text-xs mr-2 flex-shrink-0"></i>Sistemas de gestión empresarial</li>
+            <li class="service-item"><i class="fas fa-check text-sky-400 text-xs mr-2 flex-shrink-0"></i>APIs REST y bases de datos</li>
+            <li class="service-item"><i class="fas fa-check text-sky-400 text-xs mr-2 flex-shrink-0"></i>Automatización de procesos</li>
+          </ul>
+        </article>
+
+        <!-- Web -->
+        <article class="service-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay="80">
+          <div class="service-icon bg-cyan-500/10 group-hover:bg-cyan-500/18">
+            <i class="fas fa-globe text-cyan-400 text-xl"></i>
+          </div>
+          <h3 class="text-base font-semibold font-heading mt-4 mb-2 text-white">Desarrollo Web</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Páginas web y aplicaciones modernas, rápidas y optimizadas para SEO. Dale a tu negocio la presencia digital que merece.</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="service-item"><i class="fas fa-check text-cyan-400 text-xs mr-2 flex-shrink-0"></i>Sitios web corporativos</li>
+            <li class="service-item"><i class="fas fa-check text-cyan-400 text-xs mr-2 flex-shrink-0"></i>Landing pages y e-commerce</li>
+            <li class="service-item"><i class="fas fa-check text-cyan-400 text-xs mr-2 flex-shrink-0"></i>Aplicaciones web progresivas</li>
+          </ul>
+        </article>
+
+        <!-- Redes -->
+        <article class="service-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay="160">
+          <div class="service-icon bg-indigo-500/10 group-hover:bg-indigo-500/18">
+            <i class="fas fa-network-wired text-indigo-400 text-xl"></i>
+          </div>
+          <h3 class="text-base font-semibold font-heading mt-4 mb-2 text-white">Redes y Conectividad</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Diseño, instalación y configuración de redes empresariales. Wi-Fi, LAN, VPN y soluciones de conectividad segura y confiable.</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="service-item"><i class="fas fa-check text-indigo-400 text-xs mr-2 flex-shrink-0"></i>Infraestructura de red</li>
+            <li class="service-item"><i class="fas fa-check text-indigo-400 text-xs mr-2 flex-shrink-0"></i>Routers, switches y access points</li>
+            <li class="service-item"><i class="fas fa-check text-indigo-400 text-xs mr-2 flex-shrink-0"></i>VPN y seguridad perimetral</li>
+          </ul>
+        </article>
+
+        <!-- Servidores -->
+        <article class="service-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon bg-purple-500/10 group-hover:bg-purple-500/18">
+            <i class="fas fa-server text-purple-400 text-xl"></i>
+          </div>
+          <h3 class="text-base font-semibold font-heading mt-4 mb-2 text-white">Administración de Servidores</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Gestión y mantenimiento de servidores Linux y Windows. Hosting, backups automáticos y monitoreo 24/7 de tu infraestructura.</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="service-item"><i class="fas fa-check text-purple-400 text-xs mr-2 flex-shrink-0"></i>Linux & Windows Server</li>
+            <li class="service-item"><i class="fas fa-check text-purple-400 text-xs mr-2 flex-shrink-0"></i>Backups y recuperación de datos</li>
+            <li class="service-item"><i class="fas fa-check text-purple-400 text-xs mr-2 flex-shrink-0"></i>Monitoreo y seguridad</li>
+          </ul>
+        </article>
+
+        <!-- Equipos -->
+        <article class="service-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay="80">
+          <div class="service-icon bg-amber-500/10 group-hover:bg-amber-500/18">
+            <i class="fas fa-laptop text-amber-400 text-xl"></i>
+          </div>
+          <h3 class="text-base font-semibold font-heading mt-4 mb-2 text-white">Venta de Equipos</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Laptops, periféricos y equipos tecnológicos de las mejores marcas. Asesoría personalizada para elegir el equipo ideal para tu trabajo.</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="service-item"><i class="fas fa-check text-amber-400 text-xs mr-2 flex-shrink-0"></i>Laptops y computadoras</li>
+            <li class="service-item"><i class="fas fa-check text-amber-400 text-xs mr-2 flex-shrink-0"></i>Periféricos y accesorios</li>
+            <li class="service-item"><i class="fas fa-check text-amber-400 text-xs mr-2 flex-shrink-0"></i>Asesoría y soporte post-venta</li>
+          </ul>
+        </article>
+
+        <!-- Mantenimiento -->
+        <article class="service-card rounded-2xl p-6 group" data-aos="fade-up" data-aos-delay="160">
+          <div class="service-icon bg-emerald-500/10 group-hover:bg-emerald-500/18">
+            <i class="fas fa-screwdriver-wrench text-emerald-400 text-xl"></i>
+          </div>
+          <h3 class="text-base font-semibold font-heading mt-4 mb-2 text-white">Mantenimiento & Soporte</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Mantenimiento preventivo y correctivo de equipos Windows y Mac. Diagnóstico, reparación y reposición de repuestos originales y alternativos.</p>
+          <ul class="mt-4 space-y-1.5">
+            <li class="service-item"><i class="fas fa-check text-emerald-400 text-xs mr-2 flex-shrink-0"></i>Diagnóstico y reparación</li>
+            <li class="service-item"><i class="fas fa-check text-emerald-400 text-xs mr-2 flex-shrink-0"></i>Windows & macOS</li>
+            <li class="service-item"><i class="fas fa-check text-emerald-400 text-xs mr-2 flex-shrink-0"></i>Repuestos originales</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= TEAM ========================= -->
+  <section id="equipo" class="py-24 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-label">Quiénes somos</span>
+        <h2 class="section-title mt-3">El equipo <span class="gradient-text">Montec</span></h2>
+        <p class="section-subtitle">Profesionales apasionados por la tecnología con experiencia real en el campo</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+        <!-- Omar -->
+        <article class="team-card rounded-2xl p-8 text-center" data-aos="fade-right">
+          <div class="team-avatar team-avatar-omar mx-auto mb-5">
+            <span class="text-2xl font-bold font-heading text-white">OS</span>
+          </div>
+          <h3 class="text-xl font-bold font-heading mb-1 text-white">Omar Silva</h3>
+          <p class="text-sky-400 font-medium text-sm mb-1">Desarrollador de Sistemas & DevOps</p>
+          <p class="text-slate-500 text-xs mb-5">Co-fundador · Montec</p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Especialista en desarrollo de software a medida y administración de infraestructura. Transforma requerimientos de negocio en sistemas robustos, seguros y escalables.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center mb-6">
+            <span class="skill-badge">PHP / Laravel</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Vue.js</span>
+            <span class="skill-badge">Linux</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">Docker</span>
+          </div>
+          <div class="pt-5 border-t border-slate-800 flex justify-center gap-3">
+            <a href="#contacto" class="team-social-link" title="Contactar"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="team-social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="team-social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </article>
+
+        <!-- Paul -->
+        <article class="team-card rounded-2xl p-8 text-center" data-aos="fade-left">
+          <div class="team-avatar team-avatar-paul mx-auto mb-5">
+            <span class="text-2xl font-bold font-heading text-white">PM</span>
+          </div>
+          <h3 class="text-xl font-bold font-heading mb-1 text-white">Paul Montero</h3>
+          <p class="text-indigo-400 font-medium text-sm mb-1">Especialista en Redes & Hardware</p>
+          <p class="text-slate-500 text-xs mb-5">Co-fundador · Montec</p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Experto en infraestructura de redes y mantenimiento de equipos. Garantiza que tu tecnología opere sin interrupciones, tanto en entornos Windows como macOS.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center mb-6">
+            <span class="skill-badge">Cisco / MikroTik</span>
+            <span class="skill-badge">Windows Server</span>
+            <span class="skill-badge">macOS</span>
+            <span class="skill-badge">Wi-Fi Enterprise</span>
+            <span class="skill-badge">Hardware</span>
+            <span class="skill-badge">VoIP</span>
+          </div>
+          <div class="pt-5 border-t border-slate-800 flex justify-center gap-3">
+            <a href="#contacto" class="team-social-link" title="Contactar"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="team-social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= WHY US ========================= -->
+  <section id="por-que-nosotros" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-label">Nuestra ventaja</span>
+        <h2 class="section-title mt-3">¿Por qué elegir <span class="gradient-text">Montec</span>?</h2>
+        <p class="section-subtitle">Nos diferenciamos por el compromiso, la calidad técnica y la atención cercana a cada cliente</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="why-icon"><i class="fas fa-bolt text-sky-400"></i></div>
+          <h4 class="font-semibold text-white font-heading mb-2">Respuesta Rápida</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Atendemos tus urgencias con agilidad. Tu tiempo es valioso y lo respetamos al máximo.</p>
+        </div>
+
+        <div class="why-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="why-icon"><i class="fas fa-user-tie text-indigo-400"></i></div>
+          <h4 class="font-semibold text-white font-heading mb-2">Atención Personalizada</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Cada proyecto es único. Escuchamos y entendemos tus necesidades antes de proponer cualquier solución.</p>
+        </div>
+
+        <div class="why-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="why-icon"><i class="fas fa-shield-halved text-emerald-400"></i></div>
+          <h4 class="font-semibold text-white font-heading mb-2">Seguridad Garantizada</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Implementamos buenas prácticas de seguridad en cada entrega para proteger tu información y la de tus clientes.</p>
+        </div>
+
+        <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar text-amber-400"></i></div>
+          <h4 class="font-semibold text-white font-heading mb-2">Precios Justos</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Calidad profesional a precios accesibles para empresas de cualquier tamaño, desde startups hasta corporaciones.</p>
+        </div>
+
+        <div class="why-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="why-icon"><i class="fas fa-chart-line text-purple-400"></i></div>
+          <h4 class="font-semibold text-white font-heading mb-2">Soluciones Escalables</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Diseñamos pensando en el crecimiento de tu negocio. Lo que construimos hoy escala contigo mañana.</p>
+        </div>
+
+        <div class="why-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="why-icon"><i class="fas fa-headset text-cyan-400"></i></div>
+          <h4 class="font-semibold text-white font-heading mb-2">Soporte Post-entrega</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">No te dejamos solo al terminar. Ofrecemos soporte continuo y mantenimiento para asegurar el buen funcionamiento.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTACT ========================= -->
+  <section id="contacto" class="py-24 bg-slate-900/30 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-sky-500/4 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="section-label">Conversemos</span>
+        <h2 class="section-title mt-3">¿Tienes un proyecto? <span class="gradient-text">Escríbenos</span></h2>
+        <p class="section-subtitle">Cuéntanos tu idea o necesidad y te respondemos a la brevedad con una propuesta</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+
+        <!-- Info (2 cols) -->
+        <div class="lg:col-span-2" data-aos="fade-right">
+          <h3 class="text-lg font-semibold font-heading mb-5 text-white">Información de contacto</h3>
+
+          <div class="space-y-3 mb-8">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-envelope text-sky-400"></i></div>
+              <div>
+                <p class="text-slate-500 text-xs mb-0.5">Correo electrónico</p>
+                <a href="mailto:contacto@montec.pe" class="text-white text-sm hover:text-sky-400 transition-colors">contacto@montec.pe</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fab fa-whatsapp text-emerald-400"></i></div>
+              <div>
+                <p class="text-slate-500 text-xs mb-0.5">WhatsApp</p>
+                <!-- TODO: reemplaza con tu número real -->
+                <a href="https://wa.me/51999999999?text=Hola%20Montec%2C%20quisiera%20información%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="text-white text-sm hover:text-sky-400 transition-colors">+51 999 999 999</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-location-dot text-rose-400"></i></div>
+              <div>
+                <p class="text-slate-500 text-xs mb-0.5">Ubicación</p>
+                <p class="text-white text-sm">Perú</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick services -->
+          <div class="bg-slate-900/70 rounded-xl p-5 border border-sky-900/20">
+            <p class="text-sm font-medium text-white mb-3">Podemos ayudarte con:</p>
+            <div class="grid grid-cols-2 gap-y-2 gap-x-3">
+              <div class="flex items-center gap-2 text-sm text-slate-400"><i class="fas fa-check text-sky-400 text-xs flex-shrink-0"></i>Sistemas a medida</div>
+              <div class="flex items-center gap-2 text-sm text-slate-400"><i class="fas fa-check text-sky-400 text-xs flex-shrink-0"></i>Páginas web</div>
+              <div class="flex items-center gap-2 text-sm text-slate-400"><i class="fas fa-check text-sky-400 text-xs flex-shrink-0"></i>Redes empresariales</div>
+              <div class="flex items-center gap-2 text-sm text-slate-400"><i class="fas fa-check text-sky-400 text-xs flex-shrink-0"></i>Servidores</div>
+              <div class="flex items-center gap-2 text-sm text-slate-400"><i class="fas fa-check text-sky-400 text-xs flex-shrink-0"></i>Laptops / PCs</div>
+              <div class="flex items-center gap-2 text-sm text-slate-400"><i class="fas fa-check text-sky-400 text-xs flex-shrink-0"></i>Mantenimiento</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form (3 cols) -->
+        <div class="lg:col-span-3" data-aos="fade-left">
+          <!--
+            PARA ACTIVAR EL FORMULARIO:
+            1. Crea una cuenta gratuita en https://formspree.io
+            2. Crea un form y copia tu ID (ej: xabcdefg)
+            3. Reemplaza "YOUR_FORM_ID" en el action de abajo
+            Si dejas YOUR_FORM_ID, el formulario abrirá tu cliente de correo como fallback.
+          -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="form-label" for="name">Nombre *</label>
+                <input id="name" type="text" name="name" placeholder="Tu nombre completo" required class="form-input w-full px-4 py-3 rounded-xl" />
+              </div>
+              <div>
+                <label class="form-label" for="company">Empresa</label>
+                <input id="company" type="text" name="company" placeholder="Nombre de tu empresa" class="form-input w-full px-4 py-3 rounded-xl" />
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label" for="email">Correo electrónico *</label>
+              <input id="email" type="email" name="email" placeholder="tu@correo.com" required class="form-input w-full px-4 py-3 rounded-xl" />
+            </div>
+
+            <div>
+              <label class="form-label" for="service">Servicio de interés</label>
+              <select id="service" name="service" class="form-input w-full px-4 py-3 rounded-xl">
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option value="Desarrollo de Sistemas">Desarrollo de Sistemas</option>
+                <option value="Desarrollo Web">Desarrollo Web</option>
+                <option value="Redes y Conectividad">Redes y Conectividad</option>
+                <option value="Administración de Servidores">Administración de Servidores</option>
+                <option value="Venta de Equipos">Venta de Equipos</option>
+                <option value="Mantenimiento y Soporte">Mantenimiento y Soporte</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="form-label" for="message">Mensaje *</label>
+              <textarea id="message" name="message" rows="4" placeholder="Cuéntanos tu proyecto o necesidad..." required class="form-input w-full px-4 py-3 rounded-xl resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-semibold text-base shadow-lg shadow-sky-500/20">
+              <i class="fas fa-paper-plane mr-2"></i> Enviar mensaje
+            </button>
+
+            <p class="text-xs text-slate-600 text-center pt-1">
+              También puedes escribirnos por
+              <a href="https://wa.me/51999999999" target="_blank" rel="noopener" class="text-sky-500 hover:underline">WhatsApp</a>
+              o a
+              <a href="mailto:contacto@montec.pe" class="text-sky-500 hover:underline">contacto@montec.pe</a>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="bg-slate-900 border-t border-sky-900/15 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
+
+        <!-- Brand -->
+        <div class="sm:col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center font-bold text-lg text-white font-heading">M</div>
+            <span class="text-xl font-bold font-heading">Mon<span class="text-sky-400">tec</span></span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs">Soluciones tecnológicas integrales para impulsar el crecimiento de tu empresa. Hecho con pasión en Perú.</p>
+        </div>
+
+        <!-- Servicios -->
+        <div>
+          <h5 class="text-white font-semibold font-heading text-sm mb-4">Servicios</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#servicios" class="footer-link hover:text-sky-400 transition-colors">Desarrollo de Sistemas</a></li>
+            <li><a href="#servicios" class="footer-link hover:text-sky-400 transition-colors">Desarrollo Web</a></li>
+            <li><a href="#servicios" class="footer-link hover:text-sky-400 transition-colors">Redes y Conectividad</a></li>
+            <li><a href="#servicios" class="footer-link hover:text-sky-400 transition-colors">Mantenimiento & Soporte</a></li>
+          </ul>
+        </div>
+
+        <!-- Empresa -->
+        <div>
+          <h5 class="text-white font-semibold font-heading text-sm mb-4">Empresa</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#equipo"           class="footer-link hover:text-sky-400 transition-colors">Nuestro equipo</a></li>
+            <li><a href="#por-que-nosotros" class="footer-link hover:text-sky-400 transition-colors">¿Por qué Montec?</a></li>
+            <li><a href="#contacto"         class="footer-link hover:text-sky-400 transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+          <h5 class="text-white font-semibold font-heading text-sm mb-4">Contacto</h5>
+          <ul class="space-y-2.5">
+            <li>
+              <a href="mailto:contacto@montec.pe" class="footer-link hover:text-sky-400 transition-colors flex items-center gap-2">
+                <i class="fas fa-envelope text-sky-400/60 w-4"></i>contacto@montec.pe
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/51999999999" target="_blank" rel="noopener" class="footer-link hover:text-sky-400 transition-colors flex items-center gap-2">
+                <i class="fab fa-whatsapp text-emerald-400/60 w-4"></i>WhatsApp
+              </a>
+            </li>
+            <li>
+              <span class="footer-link flex items-center gap-2 cursor-default">
+                <i class="fas fa-map-pin text-rose-400/60 w-4"></i>Perú
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-sky-900/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-600 text-xs">© 2025 Montec. Todos los derechos reservados.</p>
+        <p class="text-slate-700 text-xs">Hecho con <span class="text-rose-500">♥</span> en Perú</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrolltop" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up text-sm"></i>
+  </button>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
